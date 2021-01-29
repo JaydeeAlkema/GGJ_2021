@@ -1,16 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    [SerializeField] private string mouseXInputName;
-    [SerializeField] private string mouseYInputName;
-    [SerializeField] private float mouseSensitivity;
+    [SerializeField] private string mouseXInputName; //Input name for inputmanager on X
+    [SerializeField] private string mouseYInputName; //Input name for inputmanager on Y
+    [SerializeField] private float mouseSensitivity; //The sensitivity of the mouse
 
-    [SerializeField] private Transform playerBody;
+    [SerializeField] private Image reticle; //Reticle in the center of the screen (little dot)
+    [SerializeField] private TextMeshProUGUI grabText; //The text to display under the reticle when looking at an interactable
 
-    private float xAxisClamp;
+    [SerializeField] private string interactButtonName; //Input name for inputmanager to interact
+
+    [SerializeField] private float interactDistance; //The distance the player can interact with interactables
+
+    [SerializeField] private Transform playerBody; //The transform of the player for movement
+
+    [SerializeField] private LayerMask interactionMask; //The mask to check with things that are interactable
+
+    private float xAxisClamp; //Tracker of the clamping of the camera
 
     private void Awake()
     {
@@ -27,6 +38,7 @@ public class CameraBehaviour : MonoBehaviour
     private void Update()
     {
         CameraRotation();
+        InteractInput();
     }
 
     private void CameraRotation()
@@ -58,5 +70,29 @@ public class CameraBehaviour : MonoBehaviour
         Vector3 eulerRotation = transform.eulerAngles;
         eulerRotation.x = value;
         transform.eulerAngles = eulerRotation;
+    }
+
+    private void InteractInput()
+    {
+
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position, transform.forward);
+
+
+        Debug.DrawRay(transform.position, transform.forward, Color.blue);
+        if (Physics.Raycast(ray, out hit, interactDistance, interactionMask))
+        {
+            grabText.text = hit.transform.GetComponent<InteractableButton>().FlavorText;
+            reticle.color = Color.white;
+            if (Input.GetButtonDown(interactButtonName))
+            {
+                hit.transform.GetComponent<IInteractable>()?.Interact();
+            }
+        }
+        else
+        {
+            grabText.text = "";
+            reticle.color = Color.black;
+        }
     }
 }
