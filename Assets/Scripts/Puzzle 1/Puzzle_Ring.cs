@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class Puzzle_Ring : MonoBehaviour
 {
-	int rotIndex = 1;
+	[SerializeField] private int ringState = 0;
+	[SerializeField] private Animator anim;
+
+	private void Start()
+	{
+		anim = GetComponent<Animator>();
+	}
 
 	private void Update()
 	{
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			RotateOnce();
+			ChangeToNextState();
 		}
 	}
 
-	public void RotateOnce()
+	public void ChangeToNextState()
 	{
-		transform.Rotate(new Vector3(90 * rotIndex, transform.rotation.y, transform.rotation.z));
-		rotIndex++;
+		ringState++;
+		if(ringState > 3) ringState = 0;
+		anim.SetInteger("State", ringState);
 	}
 }
