@@ -82,7 +82,6 @@ public class CameraBehaviour : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward, Color.blue);
         if (Physics.Raycast(ray, out hit, interactDistance, interactionMask))
         {
-            grabText.text = hit.transform.GetComponent<InteractableButton>().FlavorText;
             reticle.color = Color.white;
             if (Input.GetButtonDown(interactButtonName))
             {
@@ -91,7 +90,6 @@ public class CameraBehaviour : MonoBehaviour
         }
         else
         {
-            grabText.text = "";
             reticle.color = Color.black;
         }
     }
