@@ -16,22 +16,11 @@ public class Puzzle_Rotato : MonoBehaviour
 	[SerializeField] private bool circleMiddleCorrectlyRotated = false;
 	[SerializeField] private bool circleInnerCorrectlyRotated = false;
 
-	private void Update()
-	{
-		CheckRotation(circleOuter.transform.rotation.x, circleOuterTargetRotation, 1f, circleOuter);
-		CheckRotation(circleMiddle.transform.rotation.x, circleMiddleTargetRotation, 1f, circleMiddle);
-		CheckRotation(circleInner.transform.rotation.x, circleInnerTargetRotation, 1f, circleInner);
-	}
-
 	private void FixedUpdate()
 	{
-	}
-
-	void CheckRotation(float currentRotation, float targetRotation, float offset, Puzzle_Ring puzzleRing)
-	{
-		if(currentRotation >= (targetRotation + offset) || currentRotation <= (targetRotation - offset))
+		if(circleOuter.transform.rotation.x >= circleOuterTargetRotation + 1f && circleOuter.transform.rotation.x <= circleOuterTargetRotation - 1f)
 		{
-			
+			circleOuterCorrectlyRotated = true;
 		}
 	}
 }
