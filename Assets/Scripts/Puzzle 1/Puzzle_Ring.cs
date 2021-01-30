@@ -31,6 +31,6 @@ public class Puzzle_Ring : MonoBehaviour
 		state++;
 		if(state > 4) state = 1;
 		anim.SetInteger("State", state);
-		AudioManager.PlayAudioAtPosition(transform.position, audioClip, 0.25f, false);
+		AudioManager.PlayAudioAtPosition(transform.position, audioClip, 0.15f, false);
 	}
 }
