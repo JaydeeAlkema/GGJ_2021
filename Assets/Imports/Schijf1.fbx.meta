@@ -3,12 +3,7 @@ guid: d4f9d092c7e8fd54eb9ff85187265064
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MATT_schijf1
-    second: {fileID: 2100000, guid: cf09a9aecb72cb94a972ad3fcf66fd16, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
