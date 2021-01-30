@@ -86,6 +86,7 @@ public class CameraBehaviour : MonoBehaviour
             if (Input.GetButtonDown(interactButtonName))
             {
                 hit.transform.GetComponent<IInteractable>()?.Interact();
+                hit.transform.GetComponent<IPuzzleRing>()?.Interact();
             }
         }
         else
