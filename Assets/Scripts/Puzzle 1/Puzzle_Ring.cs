@@ -7,6 +7,7 @@ public class Puzzle_Ring : MonoBehaviour
 	[SerializeField] private int state = 0;
 	[SerializeField] private Animator anim;
 	[SerializeField] private KeyCode changeStateKey;
+	[SerializeField] private AudioClip audioClip = default;
 
 	public int State { get => state; set => state = value; }
 
@@ -30,5 +31,6 @@ public class Puzzle_Ring : MonoBehaviour
 		state++;
 		if(state > 4) state = 1;
 		anim.SetInteger("State", state);
+		AudioManager.PlayAudioAtPosition(transform.position, audioClip, 0.25f, false);
 	}
 }
