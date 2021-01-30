@@ -9,23 +9,30 @@ public class FlipButton : MonoBehaviour, IInteractable
     [SerializeField] private bool flipped = false;
     [SerializeField] private UnityEvent interactEvent;
 
+    public bool Flipped { get => flipped; set => flipped = value; }
+
     private void Start()
     {
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
         Flip();
     }
     public void Interact()
     {
-        Flip();
-        interactEvent.Invoke();
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
+        {
+            Flip();
+            interactEvent.Invoke();
+        }
     }
 
     public void Flip()
     {
+
         Debug.Log("Flip!");
         flipped = !flipped;
         animator.SetBool("flipped", flipped);
-    }
 
-    
+    }
 }
+
+
