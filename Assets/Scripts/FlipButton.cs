@@ -11,7 +11,8 @@ public class FlipButton : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>(); 
+        Flip();
     }
     public void Interact()
     {
