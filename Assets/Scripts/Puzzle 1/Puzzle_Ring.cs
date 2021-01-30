@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Puzzle_Ring : MonoBehaviour
 {
-	[SerializeField] private int state = 1;
+	[SerializeField] private int state = 0;
 	[SerializeField] private Animator anim;
+	[SerializeField] private KeyCode changeStateKey;
 
 	public int State { get => state; set => state = value; }
 
@@ -16,10 +17,9 @@ public class Puzzle_Ring : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			ChangeToNextState();
-		}
+		if(Input.GetKeyDown(changeStateKey))
+			if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !anim.IsInTransition(0))
+				ChangeToNextState();
 	}
 
 	public void ChangeToNextState()
