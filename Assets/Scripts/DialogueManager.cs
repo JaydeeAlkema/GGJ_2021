@@ -20,6 +20,10 @@ public class DialogueManager : MonoBehaviour
 		else instance = this;
 	}
 
+	/// <summary>
+	/// Set the full text of the dialogue manager.
+	/// </summary>
+	/// <param name="text"> What should the fulltext be. </param>
 	public void SetFullText(string text)
 	{
 		fullText = text;
