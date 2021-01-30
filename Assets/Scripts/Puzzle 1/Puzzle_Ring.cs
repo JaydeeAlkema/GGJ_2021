@@ -13,6 +13,9 @@ public class Puzzle_Ring : MonoBehaviour
 	private void Start()
 	{
 		anim = GetComponent<Animator>();
+		state = Random.Range(1, 4);
+		anim.SetInteger("State", state);
+
 	}
 
 	private void Update()
