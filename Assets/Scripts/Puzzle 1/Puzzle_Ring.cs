@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Puzzle_Ring : MonoBehaviour
 {
-	[SerializeField] private int ringState = 0;
+	[SerializeField] private int state = 1;
 	[SerializeField] private Animator anim;
+
+	public int State { get => state; set => state = value; }
 
 	private void Start()
 	{
@@ -22,8 +24,8 @@ public class Puzzle_Ring : MonoBehaviour
 
 	public void ChangeToNextState()
 	{
-		ringState++;
-		if(ringState > 3) ringState = 0;
-		anim.SetInteger("State", ringState);
+		state++;
+		if(state > 4) state = 1;
+		anim.SetInteger("State", state);
 	}
 }

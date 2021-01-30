@@ -8,9 +8,9 @@ public class Puzzle_Rotato : MonoBehaviour
 	[SerializeField] private Puzzle_Ring circleMiddle;
 	[SerializeField] private Puzzle_Ring circleInner;
 	[Space]
-	[SerializeField] private float circleOuterTargetRotation;
-	[SerializeField] private float circleMiddleTargetRotation;
-	[SerializeField] private float circleInnerTargetRotation;
+	[SerializeField] private int circleOuterTargetState;
+	[SerializeField] private int circleMiddleTargetState;
+	[SerializeField] private int circleInnerTargetState;
 	[Space]
 	[SerializeField] private bool circleOuterCorrectlyRotated = false;
 	[SerializeField] private bool circleMiddleCorrectlyRotated = false;
@@ -18,9 +18,8 @@ public class Puzzle_Rotato : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if(circleOuter.transform.rotation.x >= circleOuterTargetRotation + 1f && circleOuter.transform.rotation.x <= circleOuterTargetRotation - 1f)
-		{
-			circleOuterCorrectlyRotated = true;
-		}
+		circleOuterCorrectlyRotated = circleOuter.State == circleOuterTargetState;
+		circleMiddleCorrectlyRotated = circleMiddle.State == circleMiddleTargetState;
+		circleInnerCorrectlyRotated = circleInner.State == circleInnerTargetState;
 	}
 }
