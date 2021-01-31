@@ -46,7 +46,6 @@ public class Puzzle_Rotato : MonoBehaviour
 				laserParticles[i].Play();
 			else
 				laserParticles[i].Stop();
-
 		}
 	}
 }

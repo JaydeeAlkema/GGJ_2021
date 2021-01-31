@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
 	private static DialogueManager instance;
 
+	[SerializeField] private GameObject dialogueBox = default;
 	[SerializeField] private TextMeshProUGUI textField = default;
 	[SerializeField] private float textAppearDelay = 0.1f;
 	[SerializeField] private string fullText = default;
@@ -18,6 +19,13 @@ public class DialogueManager : MonoBehaviour
 	{
 		if(instance != null && instance != this) Destroy(this.gameObject);
 		else instance = this;
+
+		AppearBox(false);
+	}
+
+	public void AppearBox(bool active)
+	{
+		dialogueBox.SetActive(active);
 	}
 
 	/// <summary>
