@@ -43,8 +43,8 @@ public class CameraBehaviour : MonoBehaviour
 
     private void CameraRotation()
     {
-        float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis(mouseYInputName) * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity;
+        float mouseY = Input.GetAxis(mouseYInputName) * mouseSensitivity;
 
         xAxisClamp += mouseY;
 

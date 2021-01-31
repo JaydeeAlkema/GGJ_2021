@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2087821573788719143}
   - component: {fileID: 3122882667811297154}
   - component: {fileID: 914866742173180744}
+  - component: {fileID: 3071176809963799979}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707636134301041309}
-  m_LocalRotation: {x: 0.46378165, y: 0.05235323, z: 0.8562244, w: 0.22146237}
+  m_LocalRotation: {x: 0.4637848, y: 0.052353635, z: 0.85622257, w: 0.22146252}
   m_LocalPosition: {x: 309.79926, y: 50.622, z: 192.68292}
-  m_LocalScale: {x: 83.999954, y: 83.99994, z: 83.99994}
+  m_LocalScale: {x: 73.62163, y: 73.621605, z: 73.62161}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.6480002, y: 55.379, z: 154.488}
 --- !u!33 &3122882667811297154
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,3 +80,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!205 &3071176809963799979
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707636134301041309}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0027872885, y: -0.004980331, z: -0.003648324}
+  m_Size: 0.018884392
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.031078415
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 914866742173180744}
+  m_Enabled: 1
