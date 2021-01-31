@@ -5,34 +5,34 @@ using UnityEngine.Events;
 
 public class FlipButton : MonoBehaviour, IInteractable
 {
-    private Animator animator; //The animator to flip the button
-    [SerializeField] private bool flipped = false;
-    [SerializeField] private UnityEvent interactEvent;
+	[SerializeField] private Animator animator; //The animator to flip the button
+	[SerializeField] private bool flipped = false;
+	[SerializeField] private UnityEvent interactEvent;
 
-    public bool Flipped { get => flipped; set => flipped = value; }
+	public bool Flipped { get => flipped; set => flipped = value; }
 
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-        Flip();
-    }
-    public void Interact()
-    {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
-        {
-            Flip();
-            interactEvent.Invoke();
-        }
-    }
+	private void Start()
+	{
+		animator = GetComponentInParent<Animator>();
+		Flip();
+	}
+	public void Interact()
+	{
+		if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !animator.IsInTransition(0))
+		{
+			Flip();
+			interactEvent.Invoke();
+		}
+	}
 
-    public void Flip()
-    {
+	public void Flip()
+	{
 
-        Debug.Log("Flip!");
-        flipped = !flipped;
-        animator.SetBool("flipped", flipped);
+		Debug.Log("Flip!");
+		flipped = !flipped;
+		animator.SetBool("flipped", flipped);
 
-    }
+	}
 }
 
 
