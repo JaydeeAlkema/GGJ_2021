@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7097921071068694486}
   - component: {fileID: 1013975158}
+  - component: {fileID: 8776608141813180332}
   m_Layer: 0
   m_Name: Tree_4
   m_TagString: Untagged
@@ -45,6 +46,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3530662, y: 2.244432, z: 1.7277827}
   m_Center: {x: -0.050031543, y: 0.622216, z: 0.36389136}
+--- !u!205 &8776608141813180332
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630270990966794304}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.51031256, y: 3.0780725, z: 1.8871741}
+  m_Size: 6.317709
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.043445453
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8885005247136132890}
+  m_Enabled: 1
 --- !u!1001 &7821754829115847582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +147,12 @@ PrefabInstance:
 --- !u!4 &7712077834593244277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: da0eb7fa3bef87a41876aec74ce657a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7821754829115847582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8885005247136132890 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: da0eb7fa3bef87a41876aec74ce657a7,
     type: 3}
   m_PrefabInstance: {fileID: 7821754829115847582}
   m_PrefabAsset: {fileID: 0}
