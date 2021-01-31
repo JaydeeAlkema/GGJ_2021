@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 4c131aa10daab364cac57f477d8f04f0
+guid: bfb9bd7ae73189c4d98240d7b99c4e50
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bushes
+    second: {fileID: 2100000, guid: ebf2c6aa7380478489f8f2323912aa2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATTGrass
+    second: {fileID: 2100000, guid: bef4c79f255ae8f47b173dbcef823a55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATTRock
+    second: {fileID: 2100000, guid: ad9bd4c967f2a55499738cfa4ec7dd9f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
