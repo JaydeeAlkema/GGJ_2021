@@ -15,6 +15,8 @@ public class DiskFlipPuzzle : MonoBehaviour
 
 	[SerializeField] private List<ParticleSystem> laserParticles = new List<ParticleSystem>();
 
+	public bool FlipPuzzleDone1 { get => FlipPuzzleDone; set => FlipPuzzleDone = value; }
+
 	private void Start()
 	{
 		FlipPuzzleDoneEvent(false);

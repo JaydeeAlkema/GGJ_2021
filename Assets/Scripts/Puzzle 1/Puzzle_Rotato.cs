@@ -19,6 +19,8 @@ public class Puzzle_Rotato : MonoBehaviour
 	[Space]
 	[SerializeField] private List<ParticleSystem> laserParticles = new List<ParticleSystem>();
 
+	public bool Puzzlecomplete1 { get => Puzzlecomplete; set => Puzzlecomplete = value; }
+
 	private void Start()
 	{
 		PuzzleCompleteEvent(Puzzlecomplete);
