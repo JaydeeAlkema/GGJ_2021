@@ -24,9 +24,9 @@ public class PuzzleCompleteCheck : MonoBehaviour
 		{
 			allPuzzlesComplete = true;
 			PuzzleCompleteEvent(true);
-			audioSource.Play();
 			boat.SetActive(true);
 			StartCoroutine(QuitGame());
+			audioSource.Play();
 		}
 	}
 
