@@ -6,6 +6,8 @@ public class PuzzleCompleteCheck : MonoBehaviour
 {
 	[SerializeField] private Puzzle_Rotato puzzle_Rotato;
 	[SerializeField] private DiskFlipPuzzle diskFlipPuzzle;
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private GameObject boat;
 	[Space]
 	[SerializeField] private List<ParticleSystem> laserParticles = new List<ParticleSystem>();
 	[SerializeField] private bool allPuzzlesComplete = false;
@@ -13,6 +15,7 @@ public class PuzzleCompleteCheck : MonoBehaviour
 	private void Start()
 	{
 		PuzzleCompleteEvent(false);
+		boat.SetActive(false);
 	}
 
 	private void FixedUpdate()
@@ -21,6 +24,9 @@ public class PuzzleCompleteCheck : MonoBehaviour
 		{
 			allPuzzlesComplete = true;
 			PuzzleCompleteEvent(true);
+			audioSource.Play();
+			boat.SetActive(true);
+			StartCoroutine(QuitGame());
 		}
 	}
 
@@ -33,5 +39,11 @@ public class PuzzleCompleteCheck : MonoBehaviour
 			else
 				laserParticles[i].Stop();
 		}
+	}
+
+	private IEnumerator QuitGame()
+	{
+		yield return new WaitForSeconds(10f);
+		Application.Quit();
 	}
 }
