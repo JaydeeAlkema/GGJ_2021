@@ -19,6 +19,9 @@ public class Puzzle_Rotato : MonoBehaviour
 	[Space]
 	[SerializeField] private List<ParticleSystem> laserParticles = new List<ParticleSystem>();
 
+	[SerializeField] private AudioClip laserBeamSound;
+	[SerializeField] private Transform laserBeamTransform;
+
 	public bool Puzzlecomplete1 { get => Puzzlecomplete; set => Puzzlecomplete = value; }
 
 	private void Start()
@@ -35,6 +38,7 @@ public class Puzzle_Rotato : MonoBehaviour
 		{
 			Puzzlecomplete = true;
 			PuzzleCompleteEvent(Puzzlecomplete);
+			AudioManager.PlayAudioAtPosition(laserBeamTransform.position, laserBeamSound, 0.075f, true);
 		}
 	}
 

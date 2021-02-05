@@ -24,6 +24,6 @@ public static class AudioManager
 		audioSource.loop = loop;
 		audioSource.Play();
 
-		Object.Destroy(sound, clip.length);
+		if(!loop) Object.Destroy(sound, clip.length);
 	}
 }

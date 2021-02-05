@@ -15,6 +15,9 @@ public class DiskFlipPuzzle : MonoBehaviour
 
 	[SerializeField] private List<ParticleSystem> laserParticles = new List<ParticleSystem>();
 
+	[SerializeField] private AudioClip laserBeamSound;
+	[SerializeField] private Transform laserBeamTransform;
+
 	public bool FlipPuzzleDone1 { get => FlipPuzzleDone; set => FlipPuzzleDone = value; }
 
 	private void Start()
@@ -56,6 +59,7 @@ public class DiskFlipPuzzle : MonoBehaviour
 			{
 				FlipPuzzleDoneEvent(true);
 				FlipPuzzleDone = true;
+				AudioManager.PlayAudioAtPosition(laserBeamTransform.position, laserBeamSound, 0.075f, true);
 			}
 		}
 	}
